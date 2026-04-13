@@ -1,0 +1,11 @@
+{
+  "WallSurface": [139, 119, 101],
+  "RoofSurface": [178, 34, 34],
+  "GroundSurface": [34, 139, 34],
+  "OuterFloorSurface": [128, 128, 128],
+  "OuterCeilingSurface": [169, 169, 169],
+  "ClosureSurface": [255, 165, 0],
+  "Window": [135, 206, 235],
+  "Door": [139, 69, 19],
+  "default": [200, 200, 200]
+}

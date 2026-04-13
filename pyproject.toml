@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voxel-viewer"
+version = "2.0.0"
+description = "Convert voxel CSV and binvox files to 3D formats (OBJ, PLY, glTF/GLB) with dynamic surface-type coloring"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+keywords = ["voxel", "3d", "citygml", "ifc", "binvox", "obj", "ply", "gltf", "visualization", "urban"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "pandas>=1.3.0",
+    "numpy>=1.21.0",
+]
+
+[project.optional-dependencies]
+gui = ["customtkinter>=5.0.0", "matplotlib>=3.5.0"]
+dev = ["pytest>=7.0.0", "pytest-cov>=4.0.0"]
+all = ["customtkinter>=5.0.0", "matplotlib>=3.5.0", "pytest>=7.0.0"]
+
+[project.scripts]
+voxel-viewer = "voxel_viewer.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/atsaad/voxel-viewer"
+Repository = "https://github.com/atsaad/voxel-viewer"
+Issues = "https://github.com/atsaad/voxel-viewer/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

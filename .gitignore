@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
+
+# Project runtime directories — keep folders, ignore contents
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+
+# Generated 3D files (don't commit outputs)
+*.obj
+*.ply
+*.mtl
+*.glb
+*.gltf
+
+# Large data / sample files (don't commit to repo)
+voxelsfolder/
+*.binvox
+*.csv
+!tests/fixtures/*.csv

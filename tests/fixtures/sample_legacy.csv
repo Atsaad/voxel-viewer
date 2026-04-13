@@ -1,0 +1,6 @@
+X,Y,Z,tag_value
+100.0,200.0,10.0,WallSurface
+100.5,200.0,10.5,RoofSurface
+101.0,200.5,10.0,WallSurface
+100.0,200.0,9.5,GroundSurface
+101.5,201.0,10.5,WallSurface
