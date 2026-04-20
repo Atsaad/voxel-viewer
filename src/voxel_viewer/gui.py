@@ -653,14 +653,17 @@ class VoxelViewerApp(ctk.CTk):
 
         except FileNotFoundError as exc:
             self._log_msg(f"❌ File not found: {exc}")
-            self.after(100, lambda: messagebox.showerror("File Error", str(exc)))
+            msg = str(exc)
+            self.after(100, lambda m=msg: messagebox.showerror("File Error", m))
         except ValueError as exc:
             self._log_msg(f"❌ Invalid data: {exc}")
-            self.after(100, lambda: messagebox.showerror("Data Error", str(exc)))
+            msg = str(exc)
+            self.after(100, lambda m=msg: messagebox.showerror("Data Error", m))
         except Exception as exc:
             self._log_msg(f"❌ Error: {exc}")
             self._log_msg(traceback.format_exc())
-            self.after(100, lambda: messagebox.showerror("Error", str(exc)))
+            msg = str(exc)
+            self.after(100, lambda m=msg: messagebox.showerror("Error", m))
         finally:
             self.after(100, lambda: self.convert_btn.configure(
                 state="normal", text="🚀 Convert to 3D"))

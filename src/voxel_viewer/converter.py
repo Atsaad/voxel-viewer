@@ -107,6 +107,13 @@ def read_csv_smart(
     else:
         df = pd.read_csv(source)
 
+    # Normalise coordinate columns: accept both lowercase (new schema) and
+    # uppercase (old schema) — the rest of the code expects uppercase.
+    _COORD_ALIASES = {"x": "X", "y": "Y", "z": "Z"}
+    rename_map = {c: _COORD_ALIASES[c] for c in df.columns if c in _COORD_ALIASES}
+    if rename_map:
+        df = df.rename(columns=rename_map)
+
     validate_csv(df)
     return df
 
